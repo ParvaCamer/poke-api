@@ -2,6 +2,10 @@
     background: #DFDFDF;
     padding: 50px 0;
     border-bottom: 2px solid #D5A100;
+    background-image: url('../../assets/9b8864f8abea3c7ec4761f23470f53eb.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 90%;
 
     h1 {
         margin: 0 20px 10px;
@@ -14,9 +18,12 @@
         align-items: center;
 
         input {
+            color: white;
             padding: 20px 30px;
             width: 250px;
             border-radius: 10px;
+            background: url('../../assets/squirtle.png') no-repeat 95%;
+            background-size: 40px;
         }
 
         #start {
@@ -30,14 +37,14 @@
             border: 3px solid #FECA1B;
             border-radius: 40px;
             box-shadow: 0 5px 20px 3px rgba(0, 0, 0, 0.6);
-          }
-          #start:hover {
-            background: #0A285F;
-            color: white;
-            position: relative;
-            top: 5px;
-            box-shadow: none;
-            cursor: pointer;
+            &:hover {
+                background: #0A285F;
+                color: white;
+                position: relative;
+                top: 5px;
+                box-shadow: none;
+                cursor: pointer;
+            }
         }
     }
 }
