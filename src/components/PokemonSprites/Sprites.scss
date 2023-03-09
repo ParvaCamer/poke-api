@@ -1,0 +1,17 @@
+.container-sprites {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    .sprite-pokemon {
+        width: 250px;
+        z-index: 1;
+        transform: translateX(-50px);
+    }
+
+    .pokeball-close {
+        width: 70px;
+        transform: translateX(100px) rotate(30deg);
+    }
+}
