@@ -18,7 +18,7 @@ const Banner = ({ onSearch, resetSprite }) => {
     e.preventDefault();
     document.querySelector('input[type="text"]').style.background = 'url(' + logoSquirtle + ') no-repeat 95%'
     document.querySelector('input[type="text"]').style.backgroundSize = "35px";
-    document.querySelector('.pokeball').classList.add('hide');
+    document.querySelector('.pokeball').classList.add('hide-pokeball');
     setTimeout(() => {
       resetSprite(false);
       response();
@@ -26,7 +26,13 @@ const Banner = ({ onSearch, resetSprite }) => {
   }
 
   const handleChange = (e) => {
-    resetSprite(true)
+    if (JSON.stringify(data) !== '{}') {
+      document.querySelector('.container-sprites').classList.add('hide-sprites');
+      setTimeout(() => {
+        resetSprite(true);
+        setData({})
+      }, 2000);
+    }
   };
 
   return (
@@ -35,7 +41,7 @@ const Banner = ({ onSearch, resetSprite }) => {
       <img src={logoAPI} alt='PokeApi' />
       <form>
         <input type="text" placeholder='Search here !' onChange={(e) => handleChange(e.target.value)} />
-        <button onClick={handleSearch} id="start">START GAME</button>
+        <button onClick={handleSearch} id="start">Show my pokemon</button>
       </form>
     </div>
   );

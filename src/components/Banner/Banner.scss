@@ -24,13 +24,15 @@
             border-radius: 10px;
             background: url('../../assets/squirtle.png') no-repeat 95%;
             background-size: 40px;
+            font-size: large;
+            text-align: center;
             &::placeholder {
                 color: white;
             }
         }
 
         #start {
-            margin-top: 20px;
+            margin-top: 30px;
             line-height: 60px;
             font-weight: bold;
             font-size: large;

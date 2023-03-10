@@ -14,9 +14,14 @@
     animation: pokeball-move infinite 3s linear;
   }
 
-  .hide {
+  .hide-pokeball {
     -webkit-animation: flicker-out 2.5s linear both, pokeball-move infinite 3s linear;
     animation: flicker-out 2.5s linear both, pokeball-move infinite 3s linear;
+  }
+
+  .hide-sprites {
+    -webkit-animation: flicker-out 2.5s linear both !important;
+    animation: flicker-out 2.5s linear both !important;
   }
 
   .container-sprites {
