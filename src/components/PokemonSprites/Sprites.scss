@@ -3,6 +3,7 @@
     flex-direction: column;
     align-items: center;
     position: relative;
+    height: 40%;
 
     .sprite-pokemon {
         width: 250px;
@@ -12,6 +13,6 @@
 
     .pokeball-close {
         width: 70px;
-        transform: translateX(100px) rotate(30deg);
+        transform: translateY(125px) rotate(30deg);
     }
 }
