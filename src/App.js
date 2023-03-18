@@ -11,11 +11,10 @@ function App() {
 
   const handleSearchResult = (data) => {
     setSearchResult(data);
-    console.log(data)
   }
 
   const handleResetSprite = (value) => {
-    setHasToReset(value)
+    setHasToReset(value);
     hasToReset = value;
   }
 

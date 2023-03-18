@@ -2,6 +2,17 @@ import React from 'react';
 import './Pokedex.scss';
 
 const PokemonCard = ({ result }) => {
+
+    function returnHeight() {
+        let height = result.height;
+        if (isNaN(height)) {
+            return height;
+        } else {
+            height *= 10; 
+            return height;
+        }
+    }
+
     return (
         < div className="pokedex" >
             <div className="left-side">
@@ -32,7 +43,7 @@ const PokemonCard = ({ result }) => {
                         <div className="dots"></div>
                     </div>
                     <div className="screen">
-                        <img src={result.sprites.other.home.front_default} alt="pokemon sprites"/>
+                        <img className={result.name === "MissingNO" ? 'pokedex-missingno' : null} src={result.sprites.other.home.front_default} alt="pokemon sprites" />
                     </div>
                     <div className="bottom-elements">
                         <div className="red-dot-left">
@@ -90,8 +101,8 @@ const PokemonCard = ({ result }) => {
                 </div>
                 <div className="center-div">
                     <div className="screen">
-                        <p>Height: {result.height}0cm</p>
-                        <p>Weight: {result.weight}kg</p>
+                        <p>Height: {returnHeight()} cm</p>
+                        <p>Weight: {result.weight} kg</p>
                     </div>
                     <div className="grid-button">
                         <span className="blue-square"></span>

@@ -6,6 +6,7 @@ import './Sprites.scss';
 const Sprites = ({ searchResult }) => {
     let [display, setDisplay] = useState(false);
 
+    console.log(searchResult)
     const handleClick = () => {
         setDisplay(true)
     }
@@ -15,7 +16,7 @@ const Sprites = ({ searchResult }) => {
             {(display) 
             ? <Pokedex result={searchResult} />
             : <div className='sprites-elements'>
-                <img className='sprite-pokemon'
+                <img className={searchResult.name === "MissingNO" ? 'sprite-missingno' : 'sprite-pokemon'}
                     src={searchResult.sprites.other.home.front_default}
                     alt="sprite pokemon" 
                     onClick={handleClick}/>

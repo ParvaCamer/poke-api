@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import logoAPI from '../../assets/pokeapi.png';
 import logoSquirtle from '../../assets/squirtle-2.png';
+import MissingNo from '../../assets/missingNo.png';
 import './Banner.scss';
 
 const Banner = ({ onSearch, resetSprite }) => {
@@ -8,17 +9,44 @@ const Banner = ({ onSearch, resetSprite }) => {
   let [data, setData] = useState({});
 
   const response = async () => {
-    const pokemon = document.querySelector('input[type=text]').value.toLowerCase()
-    const data = await (await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)).json();
-    console.log(data)
-    setData(data);
-    onSearch(data);
+    const pokemon = document.querySelector('input[type=text]').value.toLowerCase();
+    try {
+      const data = await (await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)).json();
+      if (data.detail) {
+        throw new Error(data.detail);
+      }
+      setData(data);
+      onSearch(data);
+    } catch (error) {
+      console.error(error);      
+      const sendData = {
+        sprites: {
+          other: {
+            home: {
+              front_default: MissingNo
+            }
+          }
+        },
+        name: 'MissingNO',
+        height: '????',
+        weight: '????',
+        types: [
+          {
+            type: {
+              name: 'bird'
+            }
+          }
+        ],
+        id: "000"
+      }
+      onSearch(sendData);
+      setData(sendData);
+    }
   };
 
   const handleSearch = (e) => {
-    if (document.querySelector('input[type="text"]').value !== "") {
-      console.log(document.querySelector('input[type="text"]').value)
-      e.preventDefault();
+    e.preventDefault();
+    if (document.querySelector('input[type="text"]').value) {
       document.querySelector('input[type="text"]').style.background = 'url(' + logoSquirtle + ') no-repeat 95%'
       document.querySelector('input[type="text"]').style.backgroundSize = "35px";
       document.querySelector('.pokeball').classList.add('hide-pokeball');
@@ -26,8 +54,6 @@ const Banner = ({ onSearch, resetSprite }) => {
         resetSprite(false);
         response();
       }, 2000);
-    } else {
-      //display error
     }
   }
 

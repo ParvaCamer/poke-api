@@ -12,6 +12,13 @@
         transform: translateX(-50px);
     }
 
+    .sprite-missingno {
+        cursor: pointer;
+        width: initial;
+        z-index: 1;
+        transform: translateY(30px);
+    }
+
     .pokeball-open {
         width: 70px;
         transform: translateY(125px) rotate(30deg);
