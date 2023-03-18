@@ -78,8 +78,8 @@
     display: flex;
     height: 550px;
     width: calc(350px*2);
-    -webkit-animation: fade-in-bottom 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-    animation: fade-in-bottom 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    -webkit-animation: fade-in-bottom .8s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    animation: fade-in-bottom .8s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 
     .polyline-black {
         fill: none;

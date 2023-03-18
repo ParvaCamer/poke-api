@@ -6,12 +6,13 @@
     height: 40%;
 
     .sprite-pokemon {
+        cursor: pointer;
         width: 250px;
         z-index: 1;
         transform: translateX(-50px);
     }
 
-    .pokeball-close {
+    .pokeball-open {
         width: 70px;
         transform: translateY(125px) rotate(30deg);
     }

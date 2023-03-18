@@ -51,5 +51,45 @@
                 cursor: pointer;
             }
         }
+
+        .shake {
+            animation: shake-pokeball .50s cubic-bezier(0.390, 0.575, 0.565, 1.000);
+        }
+
+        @keyframes shake-pokeball {
+            0% {
+                transform: rotate(0deg);
+            }
+            10% {
+                transform: rotate(-8deg);
+            }
+            20% {
+                transform: rotate(0deg);
+            }
+            30% {
+                transform: rotate(8deg);
+            }
+            40% {
+                transform: rotate(0deg);
+            }
+            50% {
+                transform: rotate(-8deg);
+            }
+            60% {
+                transform: rotate(0deg);
+            }
+            70% {
+                transform: rotate(8deg);
+            }
+            80% {
+                transform: rotate(0deg);
+            }
+            90% {
+                transform: rotate(-8deg);
+            }
+            100% {
+                transform: rotate(0deg);
+            }
+        }
     }
 }

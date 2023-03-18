@@ -5,24 +5,30 @@ import './Banner.scss';
 
 const Banner = ({ onSearch, resetSprite }) => {
 
-  const [data, setData] = useState({});
+  let [data, setData] = useState({});
 
   const response = async () => {
     const pokemon = document.querySelector('input[type=text]').value.toLowerCase()
     const data = await (await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)).json();
+    console.log(data)
     setData(data);
     onSearch(data);
   };
 
   const handleSearch = (e) => {
-    e.preventDefault();
-    document.querySelector('input[type="text"]').style.background = 'url(' + logoSquirtle + ') no-repeat 95%'
-    document.querySelector('input[type="text"]').style.backgroundSize = "35px";
-    document.querySelector('.pokeball').classList.add('hide-pokeball');
-    setTimeout(() => {
-      resetSprite(false);
-      response();
-    }, 2000);
+    if (document.querySelector('input[type="text"]').value !== "") {
+      console.log(document.querySelector('input[type="text"]').value)
+      e.preventDefault();
+      document.querySelector('input[type="text"]').style.background = 'url(' + logoSquirtle + ') no-repeat 95%'
+      document.querySelector('input[type="text"]').style.backgroundSize = "35px";
+      document.querySelector('.pokeball').classList.add('hide-pokeball');
+      setTimeout(() => {
+        resetSprite(false);
+        response();
+      }, 2000);
+    } else {
+      //display error
+    }
   }
 
   const handleChange = (e) => {
@@ -30,7 +36,9 @@ const Banner = ({ onSearch, resetSprite }) => {
       document.querySelector('.container-sprites').classList.add('hide-sprites');
       setTimeout(() => {
         resetSprite(true);
-        setData({})
+        data = {};
+        onSearch({})
+        console.log(data)
       }, 2000);
     }
   };

@@ -14,11 +14,12 @@ const Sprites = ({ searchResult }) => {
         <div className='container-sprites'>
             {(display) 
             ? <Pokedex result={searchResult} />
-            : <div className='sprites-elements' onClick={handleClick}>
+            : <div className='sprites-elements'>
                 <img className='sprite-pokemon'
                     src={searchResult.sprites.other.home.front_default}
-                    alt="sprite pokemon" />
-                <img className='pokeball-close' src={Pokeball} alt="pokeball" />
+                    alt="sprite pokemon" 
+                    onClick={handleClick}/>
+                <img className='pokeball-open' src={Pokeball} alt="pokeball" />
             </div>}
         </div>
     );
