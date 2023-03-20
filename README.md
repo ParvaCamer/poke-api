@@ -1,4 +1,4 @@
-# Hanged-Man
+# Poke-Api
 
 Projet écrit en React / SCSS
 
