@@ -9,6 +9,10 @@
 
     h1 {
         margin: 0 20px 10px;
+
+        @media (max-width: 480px) {
+            font-size: 1.5em;
+        }
     }
 
     form {
@@ -26,6 +30,7 @@
             background-size: 40px;
             font-size: large;
             text-align: center;
+
             &::placeholder {
                 color: white;
             }
@@ -42,6 +47,7 @@
             border: 3px solid #FECA1B;
             border-radius: 40px;
             box-shadow: 0 5px 20px 3px rgba(0, 0, 0, 0.6);
+
             &:hover {
                 background: #0A285F;
                 color: white;
@@ -60,33 +66,43 @@
             0% {
                 transform: rotate(0deg);
             }
+
             10% {
                 transform: rotate(-8deg);
             }
+
             20% {
                 transform: rotate(0deg);
             }
+
             30% {
                 transform: rotate(8deg);
             }
+
             40% {
                 transform: rotate(0deg);
             }
+
             50% {
                 transform: rotate(-8deg);
             }
+
             60% {
                 transform: rotate(0deg);
             }
+
             70% {
                 transform: rotate(8deg);
             }
+
             80% {
                 transform: rotate(0deg);
             }
+
             90% {
                 transform: rotate(-8deg);
             }
+
             100% {
                 transform: rotate(0deg);
             }

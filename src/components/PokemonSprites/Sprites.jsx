@@ -8,7 +8,8 @@ const Sprites = ({ searchResult }) => {
 
     console.log(searchResult)
     const handleClick = () => {
-        setDisplay(true)
+        setDisplay(true);
+        document.querySelector('.container-sprites').style.height = '65%'
     }
 
     return (

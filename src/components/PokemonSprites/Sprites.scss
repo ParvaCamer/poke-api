@@ -4,12 +4,16 @@
     align-items: center;
     position: relative;
     height: 40%;
+    overflow-y: scroll;
 
     .sprite-pokemon {
         cursor: pointer;
         width: 250px;
         z-index: 1;
         transform: translateX(-50px);
+        @media (max-width: 480px) {
+            transform: translateX(0);
+        }
     }
 
     .sprite-missingno {

@@ -13,6 +13,11 @@
     width: 80px;
     -webkit-animation: pokeball-move infinite 3s linear;
     animation: pokeball-move infinite 3s linear;
+
+    @media (max-width: 480px) {
+      position: relative;
+      top: 100px;
+    }
   }
 
   .hide-pokeball {
